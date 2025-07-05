@@ -43,9 +43,9 @@ userSchema.pre('save', async function (next) {
 
 
 // Create (or reuse) the Mongoose model named "User"
-// - `models.User`: checks if the model already exists (avoids re-defining in development/hot reload)
-// - `model<IUser>("User", userSchema)`: creates the model with type safety using the IUser interface
-const User = models.User || model<IUser>("User", userSchema);
+// - models?.User: checks if the model already exists (prevents OverwriteModelError during hot reloads)
+// - model<IUser>("User", userSchema): creates a new model using the IUser TypeScript interface for type safety
+const User = models?.User || model<IUser>("User", userSchema);
 
-// Export the model so it can be imported and used elsewhere (e.g., in API routes or services)
+// Export the model so it can be imported and used in routes, services, or controllers
 export default User;
