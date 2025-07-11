@@ -1,5 +1,5 @@
 import { IVideo } from "@/models/Video"; // Video type interface
-import VideoComponent from "./VideoComponent"; // Reusable component for rendering individual videos
+import VideoComponent from "./VideoComponents"; // Reusable component for rendering individual videos
 
 // Props type for the feed component
 interface VideoFeedProps {
